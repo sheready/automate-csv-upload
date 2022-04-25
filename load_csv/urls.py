@@ -1,5 +1,8 @@
 from django.urls import path
+from rest_framework.routers import DefaultRouter
 
-urlpatterns=[
-    
-]
+from .views import MovieViewSet
+
+router = DefaultRouter()
+router.register(r'movies', MovieViewSet, basename='movies')
+urlpatterns = router.urls
