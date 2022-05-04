@@ -27,7 +27,7 @@ class Command(BaseCommand):
             #excludes the headers i.e the first row
             next(data)
             for row in data:
-                created_movie, created = Movies.objects.update_or_create(
+                created_movie, is_created = Movies.objects.update_or_create(
                     show_id = row[0],
                     type=row[1],
                     title=row[2],
